@@ -1,0 +1,187 @@
+.overlay {
+  border: 0px solid rgb(7, 140, 248);
+  border-radius: 50%;
+  height: 9rem;
+  width: 9rem;
+  z-index: 10;
+  position: absolute;
+}
+.circle_out {
+  border: 2px solid rgb(7, 140, 248);
+  border-radius: 50%;
+  height: 9rem;
+  width: 9rem;
+  z-index: 1;
+  position: absolute;
+}
+.circle_out_clicked {
+  animation: fadeOutBorder 2s;
+}
+.circle_out_dashed {
+  border-radius: 50%;
+  height: 9rem;
+  width: 9rem;
+  z-index: 1;
+  position: absolute;
+  opacity: 0;
+}
+.circle_out_dashed_clicked {
+  border: 2px dashed rgb(7, 140, 248);
+  border-radius: 50%;
+  height: 9rem;
+  width: 9rem;
+  z-index: 1;
+  position: absolute;
+  animation: fadeInBorder 5s linear infinite;
+}
+@keyframes fadeOutBorder {
+  0% {
+    opacity: 1;
+    border: 2px solid rgb(7, 140, 248);
+  }
+  100% {
+    opacity: 0;
+    border: unset;
+  }
+}
+
+@keyframes fadeInBorder {
+  from {
+    border: 2px dashed rgb(7, 140, 248);
+
+    transform: rotate(0deg);
+  }
+  to {
+    border: 2px dashed rgb(7, 140, 248);
+    transform: rotate(360deg);
+  }
+}
+.circle_in {
+  background-color: rgb(7, 140, 248);
+  border-radius: 50%;
+  height: 8rem;
+  width: 8rem;
+  z-index: 2;
+  position: absolute;
+}
+.circle_in_clicked {
+  animation: fadeOutInner 2s;
+}
+@keyframes fadeOutInner {
+  0% {
+    background-color: rgb(7, 140, 248);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    background-color: unset;
+  }
+}
+
+.imgSize {
+  width: 5rem;
+  z-index: 5;
+  position: absolute;
+  content: url('https://gist.githubusercontent.com/Nam015/94164839866c91e1912966b77380592e/raw/9d652f7ebb004f718a109bf472a5c6d42ef01646/FORT_assessment_logo.svg');
+}
+
+.imgSize_clicked {
+  width: 7rem;
+  z-index: 5;
+  position: absolute;
+  animation: fadeOutImage 2s;
+}
+
+.robo {
+  width: 7rem;
+  z-index: 0;
+  position: absolute;
+  content: url('https://i.ibb.co/hB2Kmpb/FORT-assessment-robo.png');
+}
+.robo_fadeIn {
+  width: 7rem;
+  z-index: 0;
+  position: absolute;
+  content: url('https://i.ibb.co/hB2Kmpb/FORT-assessment-robo.png');
+  animation: textFadeIn 8s;
+}
+
+@keyframes fadeOutImage {
+  0% {
+    opacity: 1;
+    content: url('https://gist.githubusercontent.com/Nam015/94164839866c91e1912966b77380592e/raw/9d652f7ebb004f718a109bf472a5c6d42ef01646/FORT_assessment_logo.svg');
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    content: url('https://gist.githubusercontent.com/Nam015/94164839866c91e1912966b77380592e/raw/9d652f7ebb004f718a109bf472a5c6d42ef01646/FORT_assessment_logo.svg');
+    transform: scale(15);
+    background-color: lightblue;
+  }
+}
+
+.textFadeOut_init {
+  color: gray;
+  font-size: 15px;
+  text-align: center;
+  bottom: 30%;
+}
+.textFadeOut_clicked {
+  color: gray;
+  font-size: 15px;
+  text-align: center;
+  bottom: 30%;
+  -webkit-transition: opacity 2s;
+  -moz-transition: opacity 2s;
+  -ms-transition: opacity 2s;
+  -o-transition: opacity 2s;
+  opacity: 0;
+}
+
+.textFadeIn_init {
+  color: gray;
+  visibility: hidden;
+  font-size: 15px;
+  text-align: center;
+  top: 30%;
+}
+.textFadeIn_clicked {
+  color: gray;
+  font-size: 15px;
+  text-align: center;
+  animation: textFadeIn 4s;
+  visibility: visible;
+}
+
+@keyframes textFadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes textFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.parent {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+.child {
+  height: 50%;
+  width: 100vw;
+  display: grid;
+  place-items: center;
+  position: relative;
+}
